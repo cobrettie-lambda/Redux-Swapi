@@ -13,7 +13,8 @@ export function fetchCharacter() {
             type: GET_FETCH
          })
 
-         axios.get('https://swapi.co/api/people/')
+         axios
+            .get('https://swapi.co/api/people/')
             .then((res) => {
                 dispatch({
                     type: GET_SUCCESS,
@@ -23,7 +24,7 @@ export function fetchCharacter() {
             .catch((err) => {
                 dispatch({
                     type: GET_FAIL,
-                    payload: err.res.data
+                    payload: err.res
                 })
             })
     }
