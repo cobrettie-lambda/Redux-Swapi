@@ -13,7 +13,7 @@ export function fetchCharacter() {
             type: GET_FETCH
          })
 
-         axios.get('https://swapi.co/api/people')
+         axios.get('https://swapi.co/api/people/')
             .then((res) => {
                 dispatch({
                     type: GET_SUCCESS,
@@ -28,13 +28,6 @@ export function fetchCharacter() {
             })
     }
 }
-
-// action creator in es6
-// export const fetchCharacter = () => dispatch => {
-//     dispatch({ 
-//         type: GET_FETCH
-//     })
-// }
 
 
 // our action creator will be a function that returns a function
