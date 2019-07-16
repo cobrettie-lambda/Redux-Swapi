@@ -17,15 +17,15 @@ export const charsReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
-        errorMessage: null,
       }
     }
     case GET_SUCCESS: {
+      const newData = action.payload.results
+
       return {
         ...state,
         isLoading: false,
-        characters: [...state.characters, ...action.payload]
-        // errorMessage: null,
+        characters: newData,
       }
     }
     case GET_FAIL: {
@@ -35,9 +35,6 @@ export const charsReducer = (state = initialState, action) => {
         errorMessage: action.payload
       }
     }
-    // Fill me in with the important reducers
-    // action types should be FETCHING, SUCCESS and FAILURE
-    // your switch statement should handle all of these cases.
     default:
       return state;
   }
