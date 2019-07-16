@@ -8,7 +8,6 @@ const initialState = {
   characters: [],
   isLoading: false,
   errorMessage: null,
-  // Array characters, Boolean fetching, null error.
 };
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
